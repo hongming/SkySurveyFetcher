@@ -15,6 +15,9 @@ def parse_coordinates(ra, dec):
     return ra, dec
 
 def calculate_size(size):
+    # 如果尺寸小于等于3，返回15
+    if size <= 3:
+        return 15
     # 如果尺寸大于30，返回120，否则乘以4
     return 120 if size > 30 else size * 4
 
@@ -24,19 +27,22 @@ def resize_image(image_path, max_size=1000):
         # 获取原始尺寸
         width, height = img.size
         
+        # 如果宽和高都不超过1000像素，直接返回，不做处理
+        if width <= max_size and height <= max_size:
+            return
+        
         # 计算缩放比例
         ratio = min(max_size / max(width, height), 1.0)
         
-        if ratio < 1.0:
-            # 计算新的尺寸
-            new_width = int(width * ratio)
-            new_height = int(height * ratio)
-            
-            # 调整图片大小
-            resized_img = img.resize((new_width, new_height), Image.LANCZOS)
-            
-            # 保存调整后的图片
-            resized_img.save(image_path)
+        # 计算新的尺寸
+        new_width = int(width * ratio)
+        new_height = int(height * ratio)
+        
+        # 调整图片大小
+        resized_img = img.resize((new_width, new_height), Image.LANCZOS)
+        
+        # 保存调整后的图片
+        resized_img.save(image_path)
 
 def main():
     # 读取CSV文件
