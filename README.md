@@ -4,9 +4,9 @@
 ![img](M27.gif)
 
 现在桌面上有一个CSV文件，名称为targets_dss，包含四列数据，分别是天体ID、RA坐标（HHMMSS格式）、DEC（符号DDMMSS）和最大尺寸，如下所示
-ID	RA	DEC	Major axis size
-M1	05h34m32s	+22°00′52″	8
-M2	21h33m27s	-00°49′24″	16
+ID,RA,DEC,Major axis size
+M1,05h34m32s,+22°00′52″,8
+M2,21h33m27s,-00°49′24″,16
 
 每个天体目标的信息，拼接到下面的链接里
 https://archive.stsci.edu/cgi-bin/dss_search?v=poss2ukstu_red&r=HH+MM+SS&d=DD+MM+SS&e=J2000&h=Major&w=Major&f=gif&c=none&fov=NONE&v3=
