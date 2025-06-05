@@ -1,6 +1,7 @@
 # SkySurveyFetcher
 从The STScI Digitized Sky Survey系统下载天体图片的Python脚本，Python script for fetching celestial images from the STScI Digitized Sky Survey
 
+![img](M27.gif)
 
 现在桌面上有一个CSV文件，名称为targets_dss，包含四列数据，分别是天体ID、RA坐标（HHMMSS格式）、DEC（符号DDMMSS）和最大尺寸，如下所示
 ID	RA	DEC	Major axis size
